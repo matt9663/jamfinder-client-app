@@ -1,0 +1,16 @@
+.bands-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.user-dashboard {
+  text-align: center;
+  margin: 1% 6%
+}
+
+.functionality-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 2% 1%
+}

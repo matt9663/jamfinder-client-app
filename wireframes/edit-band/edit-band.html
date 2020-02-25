@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <title>Edit Band Wireframe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" 
+  integrity="sha256-WAgYcAck1C1/zEl5sBl5cfyhxtLgKGdpI3oKyJffVRI=" 
+  crossorigin="anonymous" />
+  <link rel="stylesheet" href="edit-band.css" type="text/css"/>
+</head>
+<body>
+  <nav role="navigation" class="navbar">
+    <a href="">JamFinder</a>
+    <ul class="nav-options">
+      <li>Find Bands</li>
+      <li>Dashboard</li>
+      <li>Logout</li>
+    </ul>
+  </nav>
+  <main role='main'>
+    <header class='header'>
+      <h2>Edit Band Info Page</h2>
+      <h3>Band name goes here</h3>
+    </header>
+    <section class='member-area'>
+      <ul class='member-list'>
+        <li>Steven - Keys - Bandleader <button class='button'>Delete Member</button></li>
+        <li>George - Guitar <button class='button'>Delete Member</button></li>
+        <li>Claire - Bass/Vox <button class='button'>Delete Member</button></li>
+        <li>Timmy - Drums <button class='button'>Delete Member</button></li>
+      </ul>
+    </section>
+    <section class='info-area'>
+      <form class='edit-band form'>
+        <label>Genre: <input type='text' name='band-genre'></label>
+        <label>Location: <input type='text' name='band-location'></label>
+        <label>Looking for members: <input type='checkbox' name='band-openings'></label>
+        <label>Band Bio: <textarea name='band-bio'></textarea></label>
+        <button type="submit">Save Changes</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

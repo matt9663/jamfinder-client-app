@@ -1,0 +1,11 @@
+.edit-user-page {
+  text-align: center;
+  margin: 5% auto;
+  width: 95%
+}
+
+.edit-user {
+  display: flex;
+  flex-direction: column;
+
+}

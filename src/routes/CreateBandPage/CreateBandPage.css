@@ -1,0 +1,12 @@
+.create-band-page {
+  text-align: center;
+}
+
+.form-area {
+  width: 80%;
+  margin: 5% auto;
+}
+.create-band {
+  display: flex;
+  flex-direction: column;
+}
