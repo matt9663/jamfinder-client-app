@@ -34,6 +34,11 @@ export class UserProvider extends Component {
       bands: user.bands
     })
   }
+  setBands = (bands) => {
+    this.setState({
+      bands
+    })
+  }
    render() {
      const value = {
       loggedInStatus: this.state.loggedInStatus,
@@ -42,7 +47,8 @@ export class UserProvider extends Component {
       bands: this.state.bands,
       setUser: this.setUser,
       loginSuccess: this.loginSuccess,
-      logOut: this.logOut
+      logOut: this.logOut,
+      setBands: this.setBands
      }
      return (
        <UserContext.Provider value={value}>

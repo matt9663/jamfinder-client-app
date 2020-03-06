@@ -1,18 +1,20 @@
 import React, { Component } from 'react'
 import './BandsListPage.css'
-import STORE from '../../STORE'
 import BandsList from '../../components/BandsList/BandsList'
+import BandsApiService from '../../services/bands-api-service'
 
 export default class BandsListPage extends Component {
   state = {
-    bands: []
+    bands: [],
+    error: null
   }
 
   componentDidMount() {
-    this.setState({
-      bands: STORE.bands
-    })
+    BandsApiService.getBands()
+      .then(res => this.setState({ bands: res }))
+      .catch(res => this.setState({ error: res.error }))
   }
+
 
   render() {
     return (
@@ -21,7 +23,7 @@ export default class BandsListPage extends Component {
           <h2>Bands List</h2>
         </header>
         <section className='bands-list'>
-          <BandsList bands={this.state.bands} />
+          {this.state.bands && <BandsList bands={this.state.bands} />}
         </section>
       </section>
     )

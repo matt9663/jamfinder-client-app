@@ -2,12 +2,51 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './Header.css'
 import UserContext from '../../context/UserContext'
-import STORE from '../../STORE'
+import TokenService from '../../services/token-service'
 
 export default class Header extends Component {
   static contextType = UserContext
-  componentDidMount() {
-    this.context.setUser(STORE.users[0])
+
+  handleLogoutClick = () => {
+    TokenService.clearAuthToken()
+    this.context.logOut()
+  }
+  renderUnloggedHeader() {
+    return (
+      <div className='nav-functions unlogged'>
+        {' '}
+        <Link to='/bands'>
+          Find Bands
+        </Link>
+        {' '}
+        <Link to='/register'>
+          Join
+        </Link>
+        {' '}
+        <Link to='/login'>
+          Login
+        </Link>
+      </div>
+    )
+  }
+
+  renderLoggedHeader() {
+    return (
+      <div className='nav-functions logged'>
+        {' '}
+        <Link to='/dashboard'>
+          Dashboard
+        </Link>
+        {' '}
+        <Link to='/bands'>
+          Find Bands
+        </Link>
+        {' '}
+        <Link onClick={this.handleLogoutClick} to='/'>
+          Logout
+        </Link>
+      </div>
+    )
   }
   render() {
     return (
@@ -17,19 +56,10 @@ export default class Header extends Component {
             JamFinder
           </Link>
         </h2>
-        <div className='nav-functions'>
-          {' '}
-          <Link to='/bands'>
-            Find Bands
-          </Link>
-          {' '}
-          <Link to='/dashboard'>
-            Your Bands
-          </Link>
-          <Link to='/'>
-            Logout
-          </Link>
-        </div>
+        {this.context.loggedInStatus
+          ? this.renderLoggedHeader()
+          : this.renderUnloggedHeader()
+        }
       </nav>
     )
   }

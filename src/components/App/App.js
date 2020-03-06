@@ -7,6 +7,8 @@ import EditUserPage from '../../routes/EditUserPage/EditUserPage'
 import { Switch, Route } from 'react-router-dom'
 import BandsListPage from '../../routes/BandsListPage/BandsListPage'
 import BandBioPage from '../../routes/BandBioPage/BandBioPage'
+import LoginPage from '../../routes/LoginPage/LoginPage'
+import RegisterUserPage from '../../routes/RegisterUserPage/RegisterUserPage'
 
 
 function App() {
@@ -16,10 +18,16 @@ function App() {
       <main className='app-main'>
         <Switch>
         <Route exact path='/'>
-            <Dashboard />
+            <BandsListPage />
           </Route>
           <Route path='/dashboard'>
             <Dashboard />
+          </Route>
+          <Route path='/login'>
+            <LoginPage />
+          </Route>
+          <Route path='/register'>
+            <RegisterUserPage />
           </Route>
           <Route path='/bands'>
             <BandsListPage />

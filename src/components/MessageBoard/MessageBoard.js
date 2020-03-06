@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import STORE from '../../STORE'
 import MessageBoardMessage from '../MessageBoardMessage/MessageBoardMessage'
 import './MessageBoard.css'
 import UserContext from '../../context/UserContext'
+import MessagesService from '../../services/messages-api-service'
 
 export default class MessageBoard extends Component {
   static contextType = UserContext
@@ -14,17 +14,15 @@ export default class MessageBoard extends Component {
     new_message: ''
   }
   componentDidMount() {
-    this.setState({
-      messages: STORE.band_messages
-    })
+    MessagesService.getBandMessages(this.props.band_id)
+    .then(res => this.setState({ messages: res}))
   }
   renderMessages() {
-    let filteredMessages = this.state.messages.filter(message => message.band === this.props.band_id)
-    if (!filteredMessages[0]) {
+    if (this.state.messages.length === 0) {
       return <li>No Messages To Display</li>
       
     } 
-    else return filteredMessages.map(message => 
+    else return this.state.messages.map(message => 
       <MessageBoardMessage key={message.id} message={message}/>
     )
   }
@@ -35,17 +33,14 @@ export default class MessageBoard extends Component {
   }
   handleMessagePost = e => {
     e.preventDefault()
-    let newMessage = {}
-    newMessage.id = this.state.messages.length + 1
-    newMessage.message = this.state.new_message
-    newMessage.author_user_name = this.context.user_name
-    newMessage.band = this.props.band_id
-    newMessage.author = this.context.user_id
-    newMessage.date_published = new Date().toLocaleString()
-    STORE.band_messages.push(newMessage)
-    this.setState({
-      messages: STORE.band_messages
+    const newMessage = this.state.new_message
+    MessagesService.postBandMessage(this.props.band_id, newMessage)
+    .then(res => 
+      this.setState({
+      messages: [res, ...this.state.messages]
     })
+    )
+    
   }
   render() {
     return (

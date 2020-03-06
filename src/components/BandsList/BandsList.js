@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './BandsList.css'
 
-function BandsList(props) {
+const BandsList = (props) => {
   return (
   <ul className='band-list'>  
   {props.bands.map(band => (

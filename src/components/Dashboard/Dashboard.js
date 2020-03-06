@@ -1,16 +1,22 @@
 import React, { Component } from 'react'
 import './Dashboard.css'
-import STORE from '../../STORE'
 import { Link } from 'react-router-dom';
 import BandsList from '../BandsList/BandsList'
 import UserContext from '../../context/UserContext'
+import BandsApiService from '../../services/bands-api-service';
 
 export default class Dashboard extends Component {
   static contextType = UserContext
+  state = {
+    bands: []
+  }
+  componentDidMount() {
+    BandsApiService.getBandByUserId(this.context.user_id)
+    .then(res => this.setState({ bands: res}))
+  }
   renderBandsList() {
-    let bands = STORE.bands.filter(band => band.members.includes(this.context.user_id))
     return (
-      <BandsList bands={bands} />
+      <BandsList bands={this.state.bands} />
     )
   }
   render() {
@@ -28,7 +34,8 @@ export default class Dashboard extends Component {
           </Link>
         </section>
         <section className='bands-list'>
-          {this.renderBandsList()}
+          <h2>Your Bands</h2>
+          {this.state.bands && <BandsList bands={this.state.bands}/>}
         </section>
       </section>
     )
