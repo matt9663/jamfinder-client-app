@@ -1,10 +1,50 @@
 .login-page {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  background-image: url(https://user-images.githubusercontent.com/51541006/76335643-c2e7da80-62ec-11ea-9cb1-bd03d1bfb660.jpg);
+  background-size: cover;
+  background-color: #011627;
+  background-blend-mode: overlay;
+  background-position: bottom;
+  min-height: 97vh;
+  padding-top: 5vh;
 }
 
 .login-wrapper {
   text-align: center;
+  width: 60%;
+  
+}
+
+.signup-wrapper {
+  background-color: #747F89;
+  color: #2F404E;
+  width: 60%;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  text-align: center;
+}
+
+.register-link > a {
+  text-decoration: underline;
+}
+
+.form-error {
+  display: flex;
+  align-items: center;
+  color: #E0402F;
+}
+
+.error-message {
+  margin-left: 10px;
+}
+
+@media only screen and (max-width: 700px) {
+  .login-wrapper {
+    width: 80%
+  }
+  .signup-wrapper {
+    width: 80%
+  }
 }

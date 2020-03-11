@@ -45,6 +45,7 @@ export default class MessageBoard extends Component {
   render() {
     return (
       <div className='message-board'>
+        <h3 className='message-board-header'>Message Board</h3>
         <div className='messages-holder'>
           <ul className='messages-list'>
             {this.renderMessages()}
@@ -52,7 +53,7 @@ export default class MessageBoard extends Component {
         </div>
         <form className='new-message-entry form' onChange={this.handleChange} onSubmit={this.handleMessagePost}>
           <label htmlFor='message'>New Message: </label>
-          <textarea name='message'></textarea>
+          <textarea name='message' placeholder='Write message here...'></textarea>
           <button type='submit'>Post Message</button>
         </form>
       </div>

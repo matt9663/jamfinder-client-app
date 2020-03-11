@@ -52,7 +52,7 @@ class EditUserPage extends Component {
     const { error } = this.state
     return (
       <section className='edit-user-page'>
-        <header role="heading">
+        <header role="heading" className='edit-user-header header'>
           <h2>Edit User Info</h2>
         </header>
         {error && 

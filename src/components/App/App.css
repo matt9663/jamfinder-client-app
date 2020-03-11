@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  background-color: #011627;
+  color: hsl(206, 80%, 96%);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  
+}
+
+.app-main {
+  background-image: url(https://user-images.githubusercontent.com/51541006/76335618-bb283600-62ec-11ea-83b3-2efd9aa1a5e1.jpg);
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-position: bottom;
+  min-height: 90vh;
+  height: 100%;
+  background-color: #011627;
+}
+a {
+  text-decoration: none;
+  color: #FFFAF7;
+}
+
+h2 {
+  font-family: 'Archivo Black', sans-serif;
+  padding: 2% 0;
+}

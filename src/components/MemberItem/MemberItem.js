@@ -12,8 +12,8 @@ export default class MemberItem extends Component {
     return (
       <li key={this.props.member.id}>
           <ul className='member-row'>
-            <li>{this.props.member.user_name}</li>
-            <li>{this.props.member.instrument}</li>
+            <li className='member_name'>{this.props.member.user_name}</li>
+            <li className='member_instrument'>{this.props.member.instrument}</li>
           </ul>
         </li>
     )

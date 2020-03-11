@@ -22,8 +22,8 @@ export default class Dashboard extends Component {
   render() {
     return (
       <section className='user-dashboard'>
-        <header className='section-header dashboard-header'>
-          <h1>{this.context.user_name}'s Dashboard</h1>
+        <header className='section-header header'>
+          <h2>{this.context.user_name}'s Dashboard</h2>
         </header>
         <section className='functionality-buttons'>
           <Link to='create/band'>
@@ -33,7 +33,7 @@ export default class Dashboard extends Component {
             <button className='link-button button' type='button'>Edit Profile</button>
           </Link>
         </section>
-        <section className='bands-list'>
+        <section className='user-bands-list'>
           <h2>Your Bands</h2>
           {this.state.bands && <BandsList bands={this.state.bands}/>}
         </section>

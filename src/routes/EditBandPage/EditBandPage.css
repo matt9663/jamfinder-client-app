@@ -1,0 +1,22 @@
+.edit-band-page {
+  text-align: center;
+  padding-bottom: 2%;
+}
+
+.edit-band-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-form-wrapper {
+  margin: 1% auto;
+  width: 95%;
+  border-radius: 3px;
+
+}
+
+.new_members-select {
+  margin-bottom: 4%;
+}

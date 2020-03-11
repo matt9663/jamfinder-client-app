@@ -7,14 +7,86 @@
 }
 
 .band-list-item {
-  padding: 2% 0;
-  border-bottom: 1px black solid;
+  height: 7vh;
+  font-size: 1.25rem;
+  background-color: #CDD7D6;
+  margin-bottom: 2%;
+  border-radius: 3px;
+  width: 100%;
+  font-family: 'Space Mono', monospace;
+  font-style: italic;
+  box-shadow: 0px 2px 4px #055ba1cc;
 }
 
 .band-info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   list-style: none;
   padding-left: 0;
+  color: #011627;
+  height: 100%;
+}
+
+
+.band-list-item:hover {
+  background-color: #BEDCA8;
+  transform: scale(1.01);
+  transition-duration: .3s;
+}
+
+.band-list-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.40rem;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 1%;
+  color: hsl(206, 70%, 90%);
+}
+
+.first-item {
+  width: 45%;
+  text-align: left;
+  margin-left: 10px;
+}
+.second-item {
+  width: 25%;
+  text-align: left;
+}
+.third-item {
+  width: 30%;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.band-name {
+  font-weight: 600;
+  font-size: 1.30rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .band-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  .band-list-item {
+    font-size: 1rem
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .band-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+  .band-list-item {
+    font-size: .9rem
+  }
+  .band-list-header {
+    font-size: 1.2rem
+  }
 }

@@ -6,11 +6,66 @@
 
 .user-dashboard {
   text-align: center;
-  margin: 1% 6%
+  margin: 0 6%
 }
 
 .functionality-buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 2% 1%
+}
+
+.functionality-buttons > a {
+  width: 30%;
+  max-width: 250px;
+  
+}
+
+.link-button {
+  font-family: 'Space Mono', monospace;
+  font-weight: 600;
+  color: hsl(206, 80%, 96%);
+  background-color: #8759C6;
+  border: 0;
+  border-radius: 4px;
+  padding: 7% 0;
+  font-size: 1.1rem;
+  width: 100%;
+  max-height: 55px;
+  
+}
+
+.link-button:hover {
+  background-color: #BEDCA8;
+  transform: scale(1.01);
+  transition-duration: .3s;
+  cursor: pointer;
+  color: #2F404E;
+}
+
+.section-header > h2{
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .functionality-buttons > a {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .functionality-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .functionality-buttons > a {
+    width: 60%;
+    margin: 2% 0;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .functionality-buttons > a {
+    width: 70%;
+  }
 }

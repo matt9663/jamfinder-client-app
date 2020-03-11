@@ -2,14 +2,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  background-image: url(https://user-images.githubusercontent.com/51541006/76335631-bebbbd00-62ec-11ea-938b-3d2d45ae75d4.jpg);
+  background-size: cover;
+  background-color: #011627;
+  background-blend-mode: overlay;
+  background-position: center;
+  min-height: 97vh;
+  padding-top: 5vh;
 }
 
 .registration-wrapper {
   text-align: center;
+  width: 65%;
 }
 
 .register-form {
   display: flex;
   flex-direction: column;
+  border-radius: 3px;
 }

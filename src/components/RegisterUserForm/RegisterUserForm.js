@@ -36,7 +36,7 @@ export default class RegisterUserForm extends Component {
   render() {
     const { error } = this.state
     return (
-      <form className="register-form" onSubmit={this.handleSubmit}>
+      <form className="register-form form" onSubmit={this.handleSubmit}>
         {error && 
           <div className='form-error' role='alert'> 
             <i className="fas fa-exclamation-circle"></i>
@@ -44,15 +44,15 @@ export default class RegisterUserForm extends Component {
           </div>
         }
         <label htmlFor="user_name">User Name: </label>
-        <input type="text" name='user_name'/>
+        <input type="text" name='user_name' placeholder='User name'/>
         <label htmlFor="password">Password: </label>
-        <input type="password" name='password'/>   
+        <input type="password" name='password' placeholder='At least 8 characters, with upper and lower case, number, and special character'/>   
         <label htmlFor="instrument">Instrument: </label>
-        <input type="text" name="instrument"/>
+        <input type="text" name="instrument" placeholder='Guitar, bass, vocals, etc...'/>
         <label htmlFor='genre'>Prefered Genre: </label>
-        <input type="text" name="genre"/>
+        <input type="text" name="genre" placeholder='Rock, jazz, funk, etc...'/>
         <label htmlFor='influences'>Influences: </label>
-        <textarea name='influences'></textarea>    
+        <textarea name='influences' placeholder='Who inspires you?'></textarea>    
         <button type="submit">Create Account</button>
       </form>
     )

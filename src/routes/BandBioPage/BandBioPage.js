@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import MemberList from '../../components/MemberList/MemberList'
 import MessageBoard from '../../components/MessageBoard/MessageBoard'
 import './BandBioPage.css'
@@ -29,8 +29,6 @@ class BandBioPage extends Component {
     members.push(this.context.user_id)
     let bands = this.context.bands
     bands.push(band_id)
-    console.log(members)
-    console.log(bands)
     BandsApiService.updateBand(
       band_id,
       { members }
@@ -53,14 +51,20 @@ class BandBioPage extends Component {
           <header className='band-bio-header header'>
             <h2>{this.state.band_name}</h2>
           </header>
+          <div className='band-buttons'>
+              {this.context.user_id === this.state.bandleader 
+                ? <Link to={`/edit/band/${this.props.match.params.id}`}><button className='band-button button'>Edit Band</button></Link>
+                : null}
+              {' '}
+              <button type='button' className='band-button button' disabled={this.toggleJoinButton()} onClick={this.handleJoinBand}>Join Band</button>
+          </div>
+          <section className='band-description'>
+            <h3>Bio</h3>
+            <p>{this.state.description}</p>
+          </section>
           <section className='member-list'>
             <h3>Current Members</h3>
             {this.state.members && <MemberList band_id={this.props.match.params.id} />}
-            <button type='button' disabled={this.toggleJoinButton()} onClick={this.handleJoinBand}>Join Band</button>
-          </section>
-          <section className='band-description'>
-            <h4>Description:</h4>
-            <p>{this.state.description}</p>
           </section>
           <section className='message-board-section'>
             {this.state.members && this.state.members.includes(this.context.user_id) ? <MessageBoard band_id={this.props.match.params.id} /> : <p>Must be a member of the band to view this message board</p>}       

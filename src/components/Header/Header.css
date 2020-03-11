@@ -3,12 +3,53 @@
   flex-direction: row;
   align-items: baseline;
   justify-content: space-between;
-  border-bottom: 1px solid black;
-  padding: 1% 3%;
+  padding: 0% 2%;
+  background-color: #5156E2;
+  font-family: 'Archivo Black', sans-serif;
+  height: 10vh;
 }
 
+.nav-functions > a {
+  color: #FFFAF7;
+  font-family: 'Space Mono', monospace;
+  font-style: italic;
+}
+.app-title > a {
+  color: #FFFAF7;
+  font-size: 2rem;
+}
 .nav-functions {
   display: flex;
   justify-content: space-evenly;
   width: 55%;
+  font-size: 1.25rem;
+}
+.app-title {
+  padding-bottom: 0;
+  padding-top: 0;
+  margin-bottom: 0;
+}
+
+.app-title > a:hover {
+  color: rgb(181, 152, 221)
+}
+
+.nav-functions> a:hover {
+  color: rgb(181, 152, 221)
+}
+
+
+@media only screen and (max-width: 650px) {
+  .Header {
+    padding: 0 2%;
+  }
+  .nav-functions > a {
+    font-size: .8rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .app-title > a {
+    font-size: 1.3rem;
+  }
 }

@@ -1,5 +1,11 @@
 .create-band-page {
   text-align: center;
+  background-image: url(https://user-images.githubusercontent.com/51541006/76335631-bebbbd00-62ec-11ea-938b-3d2d45ae75d4.jpg);
+  background-size: cover;
+  background-color: #011627;
+  background-blend-mode: overlay;
+  background-position: center;
+  min-height: 97vh;
 }
 
 .form-area {
@@ -9,4 +15,8 @@
 .create-band {
   display: flex;
   flex-direction: column;
+}
+
+.create-band-page-header > h2 {
+  font-size: 1.5rem;
 }

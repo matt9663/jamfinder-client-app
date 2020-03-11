@@ -9,6 +9,9 @@ import BandsListPage from '../../routes/BandsListPage/BandsListPage'
 import BandBioPage from '../../routes/BandBioPage/BandBioPage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegisterUserPage from '../../routes/RegisterUserPage/RegisterUserPage'
+import EditBandPage from '../../routes/EditBandPage/EditBandPage'
+import PrivateRoute from '../../route-validation/PrivateRoute'
+import PublicOnlyRoute from '../../route-validation/PublicOnlyRoute'
 
 
 function App() {
@@ -17,28 +20,40 @@ function App() {
       <Header />
       <main className='app-main'>
         <Switch>
-        <Route exact path='/'>
-            <BandsListPage />
+          <Route exact path='/'>
+            <BandsListPage/>
           </Route>
-          <Route path='/dashboard'>
-            <Dashboard />
-          </Route>
-          <Route path='/login'>
-            <LoginPage />
-          </Route>
-          <Route path='/register'>
-            <RegisterUserPage />
-          </Route>
+          <PrivateRoute 
+            path='/dashboard'
+            component={Dashboard}
+          />
+          <PublicOnlyRoute 
+            path='/login'
+            component={LoginPage} 
+          />
+          <PublicOnlyRoute 
+            path='/register'
+            component={RegisterUserPage}
+          />
           <Route path='/bands'>
             <BandsListPage />
           </Route>
-          <Route path='/create/band' component={CreateBandPage} />
-          <Route path='/edit/user'>
-            <EditUserPage />
-          </Route>
-          <Route path='/band/:id'>
-            <BandBioPage />
-          </Route>
+          <PrivateRoute 
+            path='/create/band' 
+            component={CreateBandPage}
+          />
+          <PrivateRoute 
+            path='/edit/user'
+            component={EditUserPage}
+          />
+          <PrivateRoute
+           path='/edit/band/:band_id'
+            component={EditBandPage}
+          />
+          <PrivateRoute
+            path='/band/:id'
+            component={BandBioPage} 
+          />
         </Switch>
       </main>
     </div>

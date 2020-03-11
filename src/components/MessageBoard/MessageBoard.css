@@ -1,19 +1,30 @@
 .messages-list {
   list-style-type: none;
   padding-left: 0;
+  margin: 0;
 }
 
 .message:nth-child(even) {
-  background-color: grey;
+  background-color: #5F6871;
+  color:#F2EEEA;
+}
+
+.message:nth-child(odd) {
+  background-color: #F2EEEA;
+  color: #2C3034;
 }
 
 .messages-holder {
-  margin: 4% 2%;
-  border: 1px solid black;
+  margin: 2% 2%;
 }
 
 .new-message-entry {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.message-board-header{
+  text-align: left;
+  margin-left: 2%;
 }

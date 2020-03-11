@@ -1,3 +1,62 @@
 .band-bio-page {
   text-align: center;
 }
+
+.band-button {
+  font-family: 'Space Mono', monospace;
+  font-weight: 600;
+  color: hsl(206, 80%, 96%);
+  background-color: #8759C6;
+  border: 0;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  padding: 1.5% 0;
+  width: 20%;
+  margin: 0 .5%;
+  min-height: 45px;
+}
+.band-button:hover {
+  background-color: #BEDCA8;
+  transform: scale(1.01);
+  transition-duration: .3s;
+  cursor: pointer;
+  color: #2F404E;
+}
+
+.band-button:disabled {
+  background-color: #5F6871;
+  text-decoration: line-through;
+  cursor: not-allowed;
+  color: hsl(206, 80%, 96%);
+  transform: scale(1);
+  transition-duration: 0s;
+}
+h3 {
+  font-family: 'Archivo Black', sans-serif;;
+}
+
+
+.band-bio-header > h2{
+  font-size: 2.5rem;
+}
+
+
+.band-description > p {
+  padding: 0 2%
+}
+
+@media only screen and (max-width: 525px) {  
+  .band-bio-header > h2{
+  font-size: 1.6rem;
+  }
+  .band-button {
+    width: 45%;
+  }
+
+}
+
+@media only screen and (max-width: 425px) {
+  .band-description > p {
+    padding: 0 5%
+  }
+}

@@ -52,7 +52,7 @@ class CreateBandPage extends Component {
     const { error } = this.state
     return (
       <section className='create-band-page'>
-        <header className='header'>
+        <header className='create-band-page-header header'>
           <h2>Create New Band</h2>
         </header>
         {error && 
@@ -63,16 +63,20 @@ class CreateBandPage extends Component {
         }
         <section className='form-area'>
             <form className='create-band form' onChange={this.handleChange} onSubmit={this.handleSubmit}>
-              <label>Band Name: <input type='text' name='band_name' /></label>
-              <label>Genre: <input type='text' name='genre' /></label>
-              <label>Location: <input type='text' name='location' /></label>
+              <label htmlFor='band_name'>Band Name:</label>
+              <input type='text' name='band_name' placeholder='Band name'/>
+              <label htmlFor='genre'>Genre:</label>
+              <input type='text' name='genre' placeholder='Genre'/>
+              <label htmlFor='location'>Location:</label>
+              <input type='text' name='location' placeholder='Location'/>
               <label>Looking for members: 
-                <select defaultValue={0} name='new_members'>
+                <select defaultValue={0} className='new_members-select' name='new_members'>
                   <option value={0}>No</option>
                   <option value={1}>Yes</option>
                 </select>
               </label>
-              <label>Band Bio: <textarea name='description'></textarea></label>
+              <label htmlFor='description'>Band Bio:</label>
+              <textarea name='description' placeholder='Band bio'></textarea>
               <button type="submit">Create Band</button>
             </form>
           </section>

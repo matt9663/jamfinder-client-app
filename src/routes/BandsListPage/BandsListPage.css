@@ -1,3 +1,39 @@
 .bands-list-page {
   text-align: center;
 }
+
+.filter-category {
+  margin-left: 1%;
+  font-family: 'Space Mono', monospace;
+}
+
+.filter-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 3%;
+}
+
+#search-field {
+  font-family: 'Space Mono', monospace;
+  padding: 1%;
+}
+
+.filter-section > label:first-child {
+  display: none;
+}
+
+.header {
+  padding-top: 3%;
+  font-size: 1.75rem;
+}
+
+.bands-list-section {
+  padding: 2% 0;
+  background-color: #2F404E;
+  margin: 1%;
+  border-radius: 3px;
+}
+
+.bands-list-header > h2{
+  font-size: 1.5rem;
+}
