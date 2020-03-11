@@ -46,6 +46,7 @@ export default class LoginForm extends Component {
         <label htmlFor="password">Password: </label>
         <input type="password" name='password' placeholder='Enter password' />       
         <button type="submit">Login</button>
+        <p>Demo credentials are UN: JamfinderEnthusiast, PW: Password1!</p>
       </form>
     )
   }
