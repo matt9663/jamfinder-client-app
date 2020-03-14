@@ -3,7 +3,8 @@
   list-style: none;
   padding-left: 0;
   width: 95%;
-  margin: 2% auto;
+  margin: 2% 0 auto auto;
+  padding-bottom: 2%;
 }
 
 .band-list-item {
