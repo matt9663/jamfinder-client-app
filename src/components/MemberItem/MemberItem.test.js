@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
-import MemberItem from './MemberItem';
+import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import MemberItem from './MemberItem';
 
 
 it('renders without crashing', () => {
@@ -10,7 +10,7 @@ it('renders without crashing', () => {
     <BrowserRouter>
       <MemberItem />
     </BrowserRouter>,
-    div
+    div,
   );
   ReactDOM.unmountComponentAtNode(div);
 });

@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
-import MemberList from './MemberList';
+import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import MemberList from './MemberList';
 
 
 it('renders without crashing', () => {
@@ -10,7 +10,7 @@ it('renders without crashing', () => {
     <BrowserRouter>
       <MemberList />
     </BrowserRouter>,
-    div
+    div,
   );
   ReactDOM.unmountComponentAtNode(div);
 });

@@ -32,15 +32,13 @@
   font-size: 1.1rem;
   width: 100%;
   max-height: 55px;
-  
 }
 
 .link-button:hover {
-  background-color: #BEDCA8;
+  background-color: rgb(98, 35, 187);
   transform: scale(1.01);
   transition-duration: .3s;
   cursor: pointer;
-  color: #2F404E;
 }
 
 .section-header > h2{
@@ -67,5 +65,11 @@
 @media only screen and (max-width: 415px) {
   .functionality-buttons > a {
     width: 70%;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .user-bands-list {
+    text-align: left;
   }
 }

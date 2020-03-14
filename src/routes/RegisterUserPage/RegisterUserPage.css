@@ -13,11 +13,17 @@
 
 .registration-wrapper {
   text-align: center;
-  width: 65%;
+  width: 45%;
 }
 
 .register-form {
   display: flex;
   flex-direction: column;
   border-radius: 3px;
+}
+
+@media only screen and (max-width: 750px) {
+  .registration-wrapper {
+    width: 70%
+  }
 }

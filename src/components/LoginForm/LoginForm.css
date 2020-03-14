@@ -38,11 +38,10 @@
  }
 
  .form > button:hover {
-  background-color: #BEDCA8;
+  background-color: rgb(98, 35, 187);
   transform: scale(1.01);
   transition-duration: .3s;
   cursor: pointer;
-  color: #2F404E;
  }
 
  .login-form {

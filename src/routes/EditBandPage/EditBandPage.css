@@ -20,3 +20,15 @@
 .new_members-select {
   margin-bottom: 4%;
 }
+
+@media only screen and (min-width: 650px) {
+  .edit-form-wrapper {
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 1150px) {
+  .edit-form-wrapper {
+    width: 50%;
+  }
+}

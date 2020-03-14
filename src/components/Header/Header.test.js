@@ -1,8 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
-import Header from './Header';
+import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-
+import Header from './Header';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
@@ -10,7 +9,7 @@ it('renders without crashing', () => {
     <BrowserRouter>
       <Header />
     </BrowserRouter>,
-    div
+    div,
   );
   ReactDOM.unmountComponentAtNode(div);
 });

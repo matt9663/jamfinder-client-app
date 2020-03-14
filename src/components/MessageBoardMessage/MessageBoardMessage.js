@@ -1,25 +1,38 @@
-import React from 'react'
-import './MessageBoardMessage.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import './MessageBoardMessage.css';
 
-function MessageBoardMessage(props) {
+function MessageBoardMessage({ id, message }) {
   return (
-    <li className='message' key={props.id}>
-        <div className='message-details'>
-          <span className='message-author'>Posted by: <br></br>{props.message.author_user_name}</span>
-          <span className='message-date'>Posted at: {props.message.date_published}</span>
-        </div>
-        <div className='message-content'>
-          {props.message.message}
-        </div>       
+    <li className="message" key={id}>
+      <div className="message-details">
+        <span className="message-author">
+          Posted by:
+          <br />
+          <br />
+          {message.author_user_name}
+        </span>
+        <span className="message-date">
+          Posted at:
+          {' '}
+          {message.date_published}
+        </span>
+      </div>
+      <div className="message-content">
+        {message.message}
+      </div>
     </li>
-  )
+  );
 }
+
+MessageBoardMessage.propTypes = {
+  id: PropTypes.number,
+  message: PropTypes.instanceOf(Object),
+};
 
 MessageBoardMessage.defaultProps = {
-  id: '',
-  message: '',
-  date_published:'',
-  author_user_name: ''
-}
+  id: null,
+  message: {},
+};
 
 export default MessageBoardMessage;

@@ -12,3 +12,16 @@
 .edit-user-header > h2 {
   font-size: 1.5rem;
 }
+
+@media only screen and (min-width: 650px) {
+  .edit-user-page {
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 1150px) {
+  .edit-user-page {
+    width: 50%;
+  }
+}
+

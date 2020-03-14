@@ -1,66 +1,65 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import './Header.css'
-import UserContext from '../../context/UserContext'
-import TokenService from '../../services/token-service'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import './Header.css';
+import UserContext from '../../context/UserContext';
+import TokenService from '../../services/token-service';
 
 export default class Header extends Component {
-  static contextType = UserContext
-
   handleLogoutClick = () => {
-    TokenService.clearAuthToken()
-    this.context.logOut()
-  }
-  renderUnloggedHeader() {
-    return (
-      <div className='nav-functions unlogged'>
-        {' '}
-        <Link to='/bands'>
-          Find Bands
-        </Link>
-        {' '}
-        <Link to='/register'>
-          Join
-        </Link>
-        {' '}
-        <Link to='/login'>
-          Login
-        </Link>
-      </div>
-    )
+    const { logOut } = this.context;
+    TokenService.clearAuthToken();
+    logOut();
   }
 
-  renderLoggedHeader() {
-    return (
-      <div className='nav-functions logged'>
-        {' '}
-        <Link to='/dashboard'>
-          Dashboard
-        </Link>
-        {' '}
-        <Link to='/bands'>
-          Find Bands
-        </Link>
-        {' '}
-        <Link onClick={this.handleLogoutClick} to='/'>
-          Logout
-        </Link>
-      </div>
-    )
-  }
+  renderUnloggedHeader = () => (
+    <div className="nav-functions unlogged">
+      {' '}
+      <Link to="/bands">
+        Find Bands
+      </Link>
+      {' '}
+      <Link to="/register">
+        Join
+      </Link>
+      {' '}
+      <Link to="/login">
+        Login
+      </Link>
+    </div>
+  );
+
+  renderLoggedHeader = () => (
+    <div className="nav-functions logged">
+      {' '}
+      <Link to="/dashboard">
+        Dashboard
+      </Link>
+      {' '}
+      <Link to="/bands">
+        Find Bands
+      </Link>
+      {' '}
+      <Link onClick={this.handleLogoutClick} to="/">
+        Logout
+      </Link>
+    </div>
+  );
+
   render() {
+    const { loggedInStatus } = this.context;
     return (
-      <nav className='Header'>
-        <h2 className='app-title'>
-          <Link to='/dashboard'>
+      <nav className="Header">
+        <h2 className="app-title">
+          <Link to="/">
             JamFinder
           </Link>
         </h2>
-        {this.context.loggedInStatus
+        {loggedInStatus
           ? this.renderLoggedHeader()
-          : this.renderUnloggedHeader()
-        }
+          : this.renderUnloggedHeader()}
       </nav>
-    )
+    );
   }
 }
+
+Header.contextType = UserContext;

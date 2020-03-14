@@ -13,10 +13,12 @@
   color: #FFFAF7;
   font-family: 'Space Mono', monospace;
   font-style: italic;
+  position: relative;
 }
 .app-title > a {
   color: #FFFAF7;
   font-size: 2rem;
+  position: relative;
 }
 .nav-functions {
   display: flex;
@@ -30,13 +32,43 @@
   margin-bottom: 0;
 }
 
-.app-title > a:hover {
-  color: rgb(181, 152, 221)
+
+.nav-functions > a:before {
+  content: '';
+  position: absolute;
+  width: 99%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #FFFAF7;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
 }
 
-.nav-functions> a:hover {
-  color: rgb(181, 152, 221)
+.nav-functions > a:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+} 
+
+.app-title > a:before {
+  content: '';
+  position: absolute;
+  width: 99%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #FFFAF7;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
 }
+
+.app-title > a:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+} 
+
 
 
 @media only screen and (max-width: 650px) {

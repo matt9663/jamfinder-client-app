@@ -2,7 +2,12 @@
 
 ## [Live Link](https://jamfinder-app.now.sh/)
 
-This repo contains all the files for the client of my JamFinder site, built using React. This site was designed to provide a platform for musicians to create bands and find people near them to jam with. The app is built on top of a PostgreSQL database, which is connected with the client via a Node/Express server. [Server repo](https://github.com/matt9663/jamfinder-server-api). Login is required to use most features of the site. Security is handled with password encryption by the Bcryptjs library and JWT auth tokens.
+This repo contains all the files for the client of my JamFinder site, built using React. The app is built on top of a PostgreSQL database, which is connected with the client via a Node/Express server. [Server repo](https://github.com/matt9663/jamfinder-server-api). Login is required to use most features of the site. Security is handled with password encryption by the Bcryptjs library and JWT auth tokens.
+
+
+## Summary
+
+Jamfinder is intended to be a social network for musicans to help them start bands and find people to play music with. Users can create bands or search for bands that already existed based on name, genre, or geographic location. They can join bands that are open to new members and then send messages to other members via a shared message board. The hope is that they'll be able to use the message board to plan rehearsals, share song ideas, or discuss anything else band-related.
 
 The current version supports several features, such as creating a band, joining existing bands that are open to new members, and posting to the band message board when the user is a member of the group. 
 

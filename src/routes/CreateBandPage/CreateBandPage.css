@@ -10,7 +10,9 @@
 
 .form-area {
   width: 80%;
-  margin: 5% auto;
+  margin: 0 auto;
+  margin-top: 2%;
+  padding-bottom: 2%;
 }
 .create-band {
   display: flex;
@@ -19,4 +21,10 @@
 
 .create-band-page-header > h2 {
   font-size: 1.5rem;
+}
+
+@media only screen and (min-width: 1150px) {
+  .form-area {
+    width: 60%
+  }
 }

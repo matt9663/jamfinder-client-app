@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 const UserContext = React.createContext({
   loggedInStatus: false,
@@ -7,40 +7,46 @@ const UserContext = React.createContext({
   bands: [],
   setUser: () => {},
   loginSuccess: () => {},
-  logOut: () => {}
-})
+  logOut: () => {},
+});
 
-export default UserContext
+export default UserContext;
 
 export class UserProvider extends Component {
-  state = {
-    loggedInStatus: false,
-    user_name: '',
-    user_id: null,
-    bands: [],
+  constructor(props) {
+    super(props);
+    this.state = {
+      loggedInStatus: false,
+      user_name: '',
+      user_id: null,
+      bands: [],
+    };
   }
-  
+
   loginSuccess = () => {
-    this.setState({ loggedInStatus: true })
+    this.setState({ loggedInStatus: true });
   }
+
   logOut = () => {
-    this.setState({ loggedInStatus: false })
+    this.setState({ loggedInStatus: false });
   }
 
   setUser = (user) => {
     this.setState({
       user_name: user.user_name,
       user_id: user.id,
-      bands: user.bands
-    })
+      bands: user.bands,
+    });
   }
+
   setBands = (bands) => {
     this.setState({
-      bands
-    })
+      bands,
+    });
   }
-   render() {
-     const value = {
+
+  render() {
+    const value = {
       loggedInStatus: this.state.loggedInStatus,
       user_name: this.state.user_name,
       user_id: this.state.user_id,
@@ -48,12 +54,12 @@ export class UserProvider extends Component {
       setUser: this.setUser,
       loginSuccess: this.loginSuccess,
       logOut: this.logOut,
-      setBands: this.setBands
-     }
-     return (
-       <UserContext.Provider value={value}>
-         {this.props.children}
-       </UserContext.Provider>
-     )
-   }
-}
+      setBands: this.setBands,
+    };
+    return (
+      <UserContext.Provider value={value}>
+        {this.props.children}
+      </UserContext.Provider>
+    );
+  }
+};

@@ -1,7 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
-import MessageBoard from './MessageBoard';
+import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+
+import MessageBoard from './MessageBoard';
 
 
 it('renders without crashing', () => {
@@ -10,7 +11,7 @@ it('renders without crashing', () => {
     <BrowserRouter>
       <MessageBoard />
     </BrowserRouter>,
-    div
+    div,
   );
   ReactDOM.unmountComponentAtNode(div);
 });

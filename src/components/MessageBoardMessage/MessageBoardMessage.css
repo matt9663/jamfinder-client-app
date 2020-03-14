@@ -5,14 +5,16 @@
   font-size: 0.7rem;
   font-family: 'Space Mono', monospace;
   font-style: italic;
+  line-height: .5rem;
 }
 .message {
   text-align: left;
-  padding: 2%
+  padding: 1.5%
 }
 .message-content {
-  padding-top: 2%;
-  font-size: 1.2rem;
+  padding-top: 1.5%;
+  font-size: 1.05rem;
+  line-height: 1.1rem;
 }
 
 .message-date {
@@ -34,3 +36,4 @@
     padding-top: 4%;
   }
 }
+
