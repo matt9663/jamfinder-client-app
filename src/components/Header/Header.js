@@ -46,7 +46,7 @@ export default class Header extends Component {
   );
 
   render() {
-    const { loggedInStatus } = this.context;
+    const loggedInStatus = !!window.localStorage.getItem('user_id');
     return (
       <nav className="Header">
         <h2 className="app-title">

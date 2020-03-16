@@ -62,13 +62,13 @@ class EditUserPage extends Component {
         <header role="heading" className="edit-user-header header">
           <h2>Edit User Info</h2>
         </header>
-        {error && (
-          <div className="form-error" role="alert">
-            <i className="fas fa-exclamation-circle" />
-            <p className="error-message">{error}</p>
-          </div>
-        )}
         <form className="edit-user form" onChange={this.handleChange} onSubmit={this.handleSubmit}>
+          {error && (
+            <div className="form-error" role="alert">
+              <i className="fas fa-exclamation-circle" />
+              <p className="error-message">{error}</p>
+            </div>
+          )}
           <label htmlFor="instrument">Instrument: </label>
           <input type="text" name="instrument" defaultValue={instrument} />
           <label htmlFor="genre">Prefered Genre: </label>

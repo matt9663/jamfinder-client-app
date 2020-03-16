@@ -27,7 +27,7 @@ export default class LoginForm extends Component {
         user_name.value = '';
         password.value = '';
         TokenService.saveAuthToken(res.authToken);
-        loginSuccess();
+        loginSuccess(res.user);
         setUser(res.user);
         onLoginSuccess();
       })

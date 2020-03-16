@@ -37,3 +37,9 @@
 .bands-list-header > h2{
   font-size: 1.5rem;
 }
+
+@media only screen and (max-width: 450px) {
+  .filter-section {
+    font-size: .9rem;
+  }
+}

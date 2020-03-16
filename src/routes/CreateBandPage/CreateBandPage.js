@@ -67,14 +67,14 @@ class CreateBandPage extends Component {
         <header className="create-band-page-header header">
           <h2>Create New Band</h2>
         </header>
-        {error && (
-          <div className="form-error" role="alert">
-            <i className="fas fa-exclamation-circle" />
-            <p className="error-message">{error}</p>
-          </div>
-        )}
         <section className="form-area">
           <form className="create-band form" onChange={this.handleChange} onSubmit={this.handleSubmit}>
+            {error && (
+              <div className="form-error" role="alert">
+                <i className="fas fa-exclamation-circle" />
+                <p className="error-message">{error}</p>
+              </div>
+            )}
             <label htmlFor="band_name">Band Name:</label>
             <input type="text" name="band_name" placeholder="Band name" required />
             <label htmlFor="genre">Genre:</label>

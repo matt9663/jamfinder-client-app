@@ -26,9 +26,10 @@ class BandBioPage extends Component {
   handleJoinBand = (e) => {
     // adds the active user to the bands roster, if the bands new member flag is set to true
     const band_id = this.props.match.params.id;
-    let members = this.state.members;
-    members.push(this.context.user_id);
-    let bands = this.context.bands;
+    const members = this.state.members;
+    const user_id = parseInt(window.localStorage.getItem('user_id'), 10);
+    members.push(user_id);
+    const bands = JSON.parse(window.localStorage.getItem('bands'));
     bands.push(band_id);
     BandsApiService.updateBand(
       band_id,
@@ -37,7 +38,7 @@ class BandBioPage extends Component {
       .then((res) => this.setState({ members }))
       .catch((res) => this.setState({ error: res.error }));
     UsersApiService.updateUser(
-      this.context.user_id,
+      user_id,
       { bands },
     )
       .then((res) => {
@@ -49,7 +50,7 @@ class BandBioPage extends Component {
   toggleJoinButton() {
     // toggles the disabled value of the Join Band button
     // based on whether or not the band's new_members flag is true or false
-    if (!this.state.new_members || (this.state.members && this.state.members.includes(this.context.user_id))) {
+    if (!this.state.new_members || (this.state.members && this.state.members.includes(parseInt(window.localStorage.getItem('user_id'), 10)))) {
       return true;
     } return false;
   }
@@ -61,7 +62,7 @@ class BandBioPage extends Component {
           <h2>{this.state.band_name}</h2>
         </header>
         <div className="band-buttons">
-          {this.context.user_id === this.state.bandleader 
+          {parseInt(window.localStorage.getItem('user_id'), 10) === this.state.bandleader
             ? <Link to={`/edit/band/${this.props.match.params.id}`}><button className="band-button button">Edit Band</button></Link>
             : null}
           {' '}
@@ -76,7 +77,7 @@ class BandBioPage extends Component {
           {this.state.members && <MemberList band_id={this.props.match.params.id} />}
         </section>
         <section className="message-board-section">
-          {this.state.members && this.state.members.includes(this.context.user_id) ? <MessageBoard band_id={this.props.match.params.id} /> : <p>Must be a member of the band to view this message board</p>}
+          {this.state.members && this.state.members.includes(parseInt(window.localStorage.getItem('user_id'), 10)) ? <MessageBoard band_id={this.props.match.params.id} /> : <p>Must be a member of the band to view this message board</p>}
         </section>
       </section>
     );

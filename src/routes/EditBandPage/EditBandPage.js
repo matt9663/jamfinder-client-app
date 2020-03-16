@@ -74,13 +74,13 @@ class EditBandPage extends Component {
           <h2>Edit Band Profile</h2>
         </header>
         <div className="edit-form-wrapper">
-          {error && (
-            <div className="form-error" role="alert">
-              <i className="fas fa-exclamation-circle" />
-              <p className="error-message">{error}</p>
-            </div>
-          )}
           <form className="edit-band-form form" onChange={this.handleChange} onSubmit={this.handleSubmit}>
+            {error && (
+              <div className="form-error" role="alert">
+                <i className="fas fa-exclamation-circle" />
+                <p className="error-message">{error}</p>
+              </div>
+            )}
             <label htmlFor="band_name">Band Name: </label>
             <input type="text" name="name" defaultValue={band_name} />
             <label htmlFor="genre">Genre: </label>

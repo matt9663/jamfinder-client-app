@@ -23,19 +23,30 @@ export class UserProvider extends Component {
     };
   }
 
-  loginSuccess = () => {
+  loginSuccess = (user) => {
     this.setState({ loggedInStatus: true });
+    window.localStorage.setItem('user_name', user.user_name);
+    window.localStorage.setItem('user_id', user.id);
+    window.localStorage.setItem('bands', JSON.stringify(user.bands));
   }
 
   logOut = () => {
-    this.setState({ loggedInStatus: false });
+    this.setState({
+      loggedInStatus: false,
+      user_name: '',
+      user_id: null,
+      bands: [],
+    });
+    window.localStorage.removeItem('user_name');
+    window.localStorage.removeItem('user_id');
+    window.localStorage.removeItem('bands');
   }
 
-  setUser = (user) => {
+  setUser = () => {
     this.setState({
-      user_name: user.user_name,
-      user_id: user.id,
-      bands: user.bands,
+      user_name: window.localStorage.getItem('user_name'),
+      user_id: window.localStorage.getItem('user_id'),
+      bands: window.localStorage.getItem('bands'),
     });
   }
 
@@ -43,14 +54,15 @@ export class UserProvider extends Component {
     this.setState({
       bands,
     });
+    window.sessionStorage.setItem('bands', bands);
   }
 
   render() {
     const value = {
-      loggedInStatus: this.state.loggedInStatus,
-      user_name: this.state.user_name,
-      user_id: this.state.user_id,
-      bands: this.state.bands,
+      loggedInStatus: !!window.localStorage.getItem('user_id'),
+      user_name: window.localStorage.getItem('user_name'),
+      user_id: window.localStorage.getItem('user_id'),
+      bands: window.localStorage.getItem('bands'),
       setUser: this.setUser,
       loginSuccess: this.loginSuccess,
       logOut: this.logOut,
