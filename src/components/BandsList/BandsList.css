@@ -2,7 +2,7 @@
   text-align: left;
   list-style: none;
   padding-left: 0;
-  width: 95%;
+  width: 100%;
   margin: 2% auto 0;
   padding-bottom: 2%;
 }
@@ -10,11 +10,11 @@
 .band-list-item {
   height: 7vh;
   font-size: 1.25rem;
-  background-color: #CDD7D6;
+  background-color: #cdd7d6;
   margin-bottom: 2%;
   border-radius: 3px;
   width: 100%;
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   font-style: italic;
   box-shadow: 0px 2px 4px #055ba1cc;
 }
@@ -30,11 +30,10 @@
   height: 100%;
 }
 
-
 .band-list-item:hover {
-  background-color: #BEDCA8;
+  background-color: #bedca8;
   transform: scale(1.01);
-  transition-duration: .3s;
+  transition-duration: 0.3s;
 }
 
 .band-list-header {
@@ -43,8 +42,8 @@
   justify-content: space-between;
   list-style: none;
   padding-left: 0;
-  font-size: 1.40rem;
-  font-family: 'Roboto', sans-serif;
+  font-size: 1.4rem;
+  font-family: "Roboto", sans-serif;
   margin-bottom: 1%;
   color: hsl(206, 70%, 90%);
 }
@@ -52,7 +51,7 @@
 .first-item {
   width: 45%;
   text-align: left;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 .second-item {
   width: 25%;
@@ -61,33 +60,33 @@
 .third-item {
   width: 30%;
   text-align: right;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .band-name {
   font-weight: 600;
-  font-size: 1.30rem;
+  font-size: 1.2rem;
 }
 
 @media only screen and (max-width: 800px) {
   .band-name {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 600;
   }
   .band-list-item {
-    font-size: 1rem
+    font-size: 1rem;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .band-name {
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 600;
   }
   .band-list-item {
-    font-size: .9rem
+    font-size: 0.9rem;
   }
   .band-list-header {
-    font-size: 1.2rem
+    font-size: 1.2rem;
   }
 }

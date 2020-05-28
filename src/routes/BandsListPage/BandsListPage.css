@@ -4,7 +4,7 @@
 
 .filter-category {
   margin-left: 1%;
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
 }
 
 .filter-section {
@@ -14,7 +14,7 @@
 }
 
 #search-field {
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   padding: 1%;
 }
 
@@ -28,18 +28,21 @@
 }
 
 .bands-list-section {
-  padding: 2% 0;
-  background-color: #2F404E;
+  padding: 2% 3%;
+  background-color: #2f404e;
   margin: 1%;
   border-radius: 3px;
 }
 
-.bands-list-header > h2{
+.bands-list-header > h2 {
   font-size: 1.5rem;
 }
 
 @media only screen and (max-width: 450px) {
   .filter-section {
-    font-size: .9rem;
+    font-size: 0.9rem;
+  }
+  .bands-list-section {
+    padding: 2% 0;
   }
 }

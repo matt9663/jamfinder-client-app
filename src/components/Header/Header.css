@@ -4,26 +4,26 @@
   align-items: baseline;
   justify-content: space-between;
   padding: 0% 2%;
-  background-color: #5156E2;
-  font-family: 'Archivo Black', sans-serif;
+  background-color: #5156e2;
+  font-family: "Archivo Black", sans-serif;
   height: 10vh;
 }
 
 .nav-functions > a {
-  color: #FFFAF7;
-  font-family: 'Space Mono', monospace;
+  color: #fffaf7;
+  font-family: "Space Mono", monospace;
   font-style: italic;
   position: relative;
 }
 .app-title > a {
-  color: #FFFAF7;
+  color: #fffaf7;
   font-size: 2rem;
   position: relative;
 }
 .nav-functions {
   display: flex;
   justify-content: space-evenly;
-  width: 55%;
+  width: 68%;
   font-size: 1.25rem;
 }
 .app-title {
@@ -32,15 +32,14 @@
   margin-bottom: 0;
 }
 
-
 .nav-functions > a:before {
-  content: '';
+  content: "";
   position: absolute;
   width: 99%;
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #FFFAF7;
+  background-color: #fffaf7;
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out 0s;
@@ -49,16 +48,16 @@
 .nav-functions > a:hover:before {
   visibility: visible;
   transform: scaleX(1);
-} 
+}
 
 .app-title > a:before {
-  content: '';
+  content: "";
   position: absolute;
   width: 99%;
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #FFFAF7;
+  background-color: #fffaf7;
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out 0s;
@@ -67,21 +66,19 @@
 .app-title > a:hover:before {
   visibility: visible;
   transform: scaleX(1);
-} 
-
-
+}
 
 @media only screen and (max-width: 650px) {
   .Header {
-    padding: 0 2%;
+    padding: 0 1%;
   }
   .nav-functions > a {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 }
 
 @media only screen and (max-width: 500px) {
   .app-title > a {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 }
